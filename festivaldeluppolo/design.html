@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background-color: #f7f6f5;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #606060;
+      font-weight: 500;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: #f5f5f7;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #6e6e73;
+    }
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .media-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .media-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .media-item img, .media-item video {
+      max-width: 100%;
+      height: auto;
+    }
+    .media-item h2 {
+      font-size: 1.5em;
+      margin: 15px 0;
+    }
+    .media-item p {
+      color: #6e6e73;
+      padding: 0 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f7;
+      font-size: 0.9em;
+      color: #6e6e73;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><img src="src/Dm-LOGO-Black.png" width="auto" height="70"></a>
+      <div>
+        <a href="requirements.html">Specifica dei Requisiti</a>
+        <a href="design.html">Design</a>
+      </div>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Design</h1>
+  </section>
+
+  <section class="media-grid">
+    <div class="media-item">
+      <section>
+        <h2>Architettura</h2>
+      </section>
+      <img src="src/model-view-controller.webp" alt="model view controller">
+      <p>Questo software si presta bene per un’architettura di tipo Model View Controller, ovvero tre livelli che contengono parti e funzioni diverse dell’applicazione stessa</p>
+      <p>Questa suddivisione consente di avere componenti più semplici e più facili da manutenere</p>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>Use Case Diagram</h2>
+      </section>
+      <img src="src/useCaseDiagram.png" alt="use case diagram">
+      <p>Lo Use Case Diagram, come dice il nome è il diagramma dei casi d’uso, ovvero è dedicato alla descrizione delle funzioni o servizi offerti dal sistema e mostra inoltre gli attori (coloro che interagiscono con il sistema) e le funzioni che compiono</p>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>Class Diagram</h2>
+      </section>
+      <img src="src/classDiagram.png" alt="class diagram">
+      <p>Il Class Diagram invece è la struttura dell’applicazione ed ha lo scopo di mostrare le classi, i loro attributi e metodi. inoltre presenta le relazioni tra le varie classi</p>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>Design Pattern</h2>
+      </section>
+      <section class="media-grid">
+
+        <div class="media-item">
+          <section>
+            <h3>Observer</h3>
+          </section>
+          <img src="src/observer.png" alt="observer">
+          <p>il design pattern Observer serve quando diverse classi devono essere aggiornate a seguito di un evento riguardante un oggetto o classe che stanno “osservando”</p>
+          <p>in particolare quando un ordine viene modificato deve essere aggiornato anche nel OrderRepository e visualizzato con i nuovi dati nella pagina principale degli ordini nel CheckoutContoller</p>
+        </div>
+
+        <div class="media-item">
+          <section>
+            <h3>Facade</h3>
+          </section>
+          <img src="src/facade.png" alt="facade">
+          <p>il design pattern Facade serve quando si vuole accedere a sottosistemi complessi tramite un'interfaccia  più semplice</p>
+          <p>in questo caso si vuole semplificare la creazione di un ordine (creazione, aggiunta prodotti, controllo e salvataggio nel repository) tramite la classe OrderAppFacade</p>
+        </div>
+
+        <div class="media-item">
+          <section>
+            <h3>Command</h3>
+          </section>
+          <img src="src/command.png" alt="command">
+          <p>il design pattern Command è utile per incapsulare richieste o oggetti ed è fondamentale per l’applicazione dei principi SOLID</p>
+          <p>infatti in questo caso permette di separare i metodi di creazione di un ordine da quelli di creazione e aggiunta di un prodotto(item), che originariamente erano contenuti nella classe CheckoutController</p>
+        </div>
+
+      </section>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>Activity Diagram</h2>
+      </section>
+      <img src="src/activityDiagram.png" alt="activity diagram">
+      <p>L’Activity Diagram mostra il processo di creazione di un ordine, dalla fase di login nell’applicazione fino alla visualizzazione nella tabella degli ordini</p>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>State Diagram</h2>
+      </section>
+      <img src="src/stateDiagram.png" alt="state diagram">
+      <p>Lo State Diagram presenta gli stati nel quale si può ritrovare l'applicazione e le transizioni tra uno e l'altro</p>
+    </div>
+
+    <div class="media-item">
+      <section>
+        <h2>Sequence Diagram</h2>
+      </section>
+      <img src="src/sequenceDiagram.png" alt="sequence diagram">
+      <p>Il Sequence Diagram infine descrive uno scenario e mostra in sequenza le operazioni che portano a termine questo scenario</p>
+      <p>in questo caso sono mostrati la fase di login, di aggiunta di un prodotto al menù e la creazione di un ordine</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>"Dichiaro che questo elaborato
+ è frutto del mio personale lavoro,
+svolto sostanzialmente in maniera
+ individuale e autonoma."
+    </p>
+  </footer>
+</body>
+</html>
